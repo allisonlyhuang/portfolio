@@ -477,16 +477,20 @@ function Overlay({ handleClick, onNavigate }) {
                                     <div className="hangingframe-content-text">3 years old (21 dog years old)</div>
                                 </div>
                                 <div className="hangingframe-content">
+                                    <div className="hangingframe-content-header">Birthplace:</div>
+                                    <div className="hangingframe-content-text">Lincoln, CA</div>
+                                </div>
+                                <div className="hangingframe-content">
                                     <div className="hangingframe-content-header">Hobbies:</div>
                                     <div className="hangingframe-content-text">Walking, eating, sleeping, meeting other doggies!</div>
                                 </div>
                                 <div className="hangingframe-content">
                                     <div className="hangingframe-content-header">Likes:</div>
-                                    <div className="hangingframe-content-text">His family, road trips, small stuffed animals, belly rubs, </div>
+                                    <div className="hangingframe-content-text">His family, road trips, small stuffed animals, belly rubs, beef liver treats</div>
                                 </div>
                                 <div className="hangingframe-content">
                                     <div className="hangingframe-content-header">Dislikes:</div>
-                                    <div className="hangingframe-content-text">Doggy daycare, balloons, vaccuums, </div>
+                                    <div className="hangingframe-content-text">Doggy daycare, balloons, vaccuums, being alone</div>
                                 </div>
                             </div>
                         </div>
