@@ -23,13 +23,13 @@ function ButtonBar({ handleClick }) {
         {
             bg: unpressed_button,
             icon: info_icon,
-            hoverText: 'My Resumes',
+            hoverText: 'About Me',
             onClick: () => openOverlay('info')
         },
         {
             bg: unpressed_button,
             icon: link_icon,
-            hoverText: 'External Links',
+            hoverText: 'My Resumes',
             onClick: () => openOverlay('links')
         },
         {
