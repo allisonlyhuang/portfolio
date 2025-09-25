@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.health-bar-container {
+    transform: scale(0.9);
+    transform-origin: 0 0;
+    width: 320px;
+    height: auto;
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background-color: transparent;
+    align-items: flex-start;
+    border-radius: 12px;
+    padding: 16px;
+    max-width: 400px;
+    width: 100%;
+    font-family: 'Press Start 2P';
+}
+
+.health-bar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.character-icon-container {
+    position: relative;
+    top: 0;
+}
+
+.character-icon {
+    width: 130px;
+    height: 130px;
+    background: #C1A480;
+    filter: drop-shadow(0px 0px 4px rgb(0, 0, 0, 50%));
+    border-radius: 50%;
+    transform: scaleX(-1);
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.character-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    filter: drop-shadow(6px 0px 0 rgb(0, 0, 0, 25%));
+    transform: scale(1.1);
+    position: absolute;
+    bottom: -15%;
+    left: 0;
+}
+
+.music-notes-left {
+    transform: scale(1.5);
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    bottom: -38%;
+    left: -115%;
+    z-index: 999;
+    opacity: 65%;
+}
+
+.health-status-wrapper {
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-bottom-right-radius: 20px;
+}
+
+.health-info {
+    background-color: #79644E;
+    border-top-right-radius: 20px;
+    padding: 15px 20px 15px 70px;
+    width: 240px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 100px;
+    top: -130px;
+    z-index: -1;
+}
+
+.player-name {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 4px;
+    margin-left: -10px; 
+    letter-spacing: -0.5px; 
+}
+
+.health-bar-wrapper {
+    margin-top: 2px;
+    position: relative;
+    margin-bottom: 4px;
+    margin-left: -20px;
+    width: 100%;
+}
+
+
+.status-container {
+    display: flex;
+    width: 240px;
+    background-color: #4C4034;
+    padding: 4px 20px 8px 70px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    gap: 15px;
+    left: 101px;
+    top: -155px;
+    z-index: -1;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.level-status-text {
+    color: #f7f4e9;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-left: -10px;
+}
+
+.mood-status-text {
+    color: #f7f4e9;
+    background-color: #4C4034;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}

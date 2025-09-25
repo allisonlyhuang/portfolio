@@ -1,0 +1,58 @@
+.box {
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.buttoncontainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.buttonwhole {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.buttonwhole .buttonbg {
+    position: absolute;
+    transform: scale(0.6);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.buttonwhole .buttonicon {
+    position: absolute;
+    transform: scale(0.6);
+    transition: transform 0.2s;
+    z-index: 2;
+}
+
+.buttonwhole:hover .buttonbg,
+.buttonwhole:hover .buttonicon {
+    transform: scale(0.55);
+}
+
+.buttonwhole:active .buttonbg,
+.buttonwhole:active .buttonicon {
+    transform: scale(0.45);
+}
+
+.buttonwhole:focus {
+    outline: none;
+}

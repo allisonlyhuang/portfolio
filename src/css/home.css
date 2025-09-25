@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #393129;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    /* no image highlight */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+html,
+body {
+    touch-action: manipulation;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.room_parent {
+    position: relative;
+    transform: scale(2.3);
+    filter: brightness(1);
+    transition: filter 0.5s ease;
+    margin-bottom: 30px;
+}
+
+.room_parent.lights-off {
+    filter: brightness(0.4) contrast(1.1);
+}
+
+.room_background {
+    display: block;
+}
+
+.room_child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transition: filter 0.2s ease-in-out;
+}
+
+.drapes_button {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 20%;
+    left: 10.8%;
+    pointer-events: auto;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.drapes_button:hover {
+    filter: drop-shadow(0 0 5px rgb(255, 248, 239)) drop-shadow(2px 0px 10px rgba(75, 52, 25, 1));
+}
+
+.glass_window {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 19%;
+    left: 7.8%;
+    z-index: 1;
+}
+
+.bed {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 40%;
+    left: 30%;
+    z-index: 3;
+}
+
+.coffeetable_and_drawer {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 50%;
+    left: 35%;
+    z-index: 4;
+}
+
+.shelf {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 25%;
+    left: 48%;
+}
+
+.pctable_button {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 48%;
+    left: 65%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.pctable_button:hover {
+    filter: drop-shadow(0 0 5px rgb(255, 248, 239)) drop-shadow(2px 0px 5px rgba(75, 52, 25, 1));
+}
+
+.plants {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 41%;
+    left: 3%;
+    z-index: 6;
+}
+
+.papers_button {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 73%;
+    left: 45%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.papers_button:hover {
+    filter: drop-shadow(0 0 5px rgb(255, 248, 239)) drop-shadow(2px 0px 10px rgba(75, 52, 25, 1));
+}
+
+.awards_button {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 20%;
+    left: 51%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.awards_button:hover {
+    filter: drop-shadow(0 0 2px rgb(255, 248, 239)) drop-shadow(1px 0px 7px rgba(75, 52, 25, 1));
+}
+
+.pictureframe_button {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 70%;
+    left: 38%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.pictureframe_button:hover {
+    filter: drop-shadow(0 0 5px rgb(255, 248, 239)) drop-shadow(2px 0px 10px rgba(75, 52, 25, 1));
+}
+
+.hangingframe_button {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 30%;
+    left: 72%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.hangingframe_button:hover {
+    filter: drop-shadow(0 0 2px rgb(255, 248, 239)) drop-shadow(1px 0px 5px rgba(75, 52, 25, 1));
+}
+
+.stereo_button {
+    transform: scale(0.05);
+    image-rendering: pixelated;
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: -6%;
+    left: -10%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.stereo_button:hover {
+    filter: drop-shadow(0 0 50px rgb(255, 248, 239)) drop-shadow(2px 0px 100px rgba(75, 52, 25, 1));
+}
+
+.music_notes {
+    transform: scale(0.8);
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: -8%;
+    left: -4%;
+    z-index: 999;
+    opacity: 65%;
+}
+
+.music_nowplaying {
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    text-align: right;
+    z-index: 1000;
+    color: #EEE5DA;
+}
+
+.lights {
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    top: 7%;
+    left: 15%;
+    pointer-events: auto;
+    z-index: 5;
+}
+
+.room_child:not(.lights-off),
+.room_background:not(.lights-off),
+.lights:not(.lights-off) {
+    transition: filter 0.2s ease-in-out;
+    filter: grayscale(70%) brightness(0.5);
+}
+
+.lights:not(.lights-off),
+.lights:not(.lights-off):hover {
+    filter: grayscale(0) brightness(1) drop-shadow(0 0 5px rgb(255, 248, 239)) drop-shadow(2px 0px 10px rgba(75, 52, 25, 1));
+}
+
+.lights:hover {
+    filter: grayscale(70%) brightness(0.5) drop-shadow(0 0 5px rgb(255, 248, 239)) drop-shadow(2px 0px 10px rgba(75, 52, 25, 1));
+}
+
+.text-display {
+    position: fixed;
+    bottom: 12%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.hover_textbox {
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    color: #EEE5DA;
+    text-shadow: 0 0 8px #000000;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    text-align: center;
+    padding: 8px 20px;
+    border-radius: 4px;
+    max-width: 80%;
+    white-space: nowrap;
+}
+
+.hover_textbox::before {
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    content: '>>';
+    margin-right: 10px;
+    color: #EEE5DA;
+
+}
+
+.hover_textbox::after {
+    font-family: 'Press Start 2P';
+    font-size: 12px;
+    content: '<<';
+    margin-left: 10px;
+    color: #EEE5DA;
+}
+
+.pet-font {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+.drapes_button:hover,
+.pctable_button:hover,
+.papers_button:hover,
+.awards_button:hover,
+.hangingframe_button:hover,
+.lights:hover {
+    transform: scale(1.06);
+    transition: transform 0.2s ease-in-out;
+}
+
+.stereo_button:hover {
+    transform: scale(0.06);
+    transition: transform 0.2s ease-in-out;
+}
+
+.pictureframe_button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.duoduo_button,
+.duoduo_button_bark {
+    image-rendering: pixelated;
+    transform: scale(0.08);
+    image-rendering: pixelated;
+    position: absolute;
+    background: none;
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    z-index: 100;
+    transition: transform 0.2s ease-in-out;
+}
+
+.duoduo_button {
+    top: -50%;
+    left: -60%;
+}
+
+.duoduo_button_bark {
+    top: -52%;
+    left: -60%;
+}

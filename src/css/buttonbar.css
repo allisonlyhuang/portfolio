@@ -1,0 +1,58 @@
+.bar {
+    width: 90px;
+    height: 360px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.button-container {
+    width: 100%;
+    height: 25%;
+    position: relative;
+}
+
+.button_whole {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.button_whole .button-background {
+    position: absolute;
+    transform: scale(0.6);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.button_whole .button-icon {
+    position: absolute;
+    transform: scale(0.6);
+    transition: transform 0.2s;
+    z-index: 2;
+}
+
+.button_whole:hover .button-background,
+.button_whole:hover .button-icon {
+    transform: scale(0.55);
+}
+
+.button_whole:active .button-background,
+.button_whole:active .button-icon {
+    transform: scale(0.45);
+}
+
+.button_whole:focus {
+    outline: none;
+}
