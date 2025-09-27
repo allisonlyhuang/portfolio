@@ -9,8 +9,11 @@ import { AudioProvider, useAudio } from './context/audio';
 import { useRef, useEffect, useState } from 'react';
 import button_click from './assets/buttons/Button 4 (1).mp3';
 import TransitionCircle from './components/transition';
+import { usePreloadAssets } from "./hooks/preloadassets";
 
 function App() {
+  usePreloadAssets();
+
   return (
     <HoverProvider>
       <OverlayProvider>
