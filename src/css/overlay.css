@@ -106,7 +106,6 @@
 }
 
 .settings-body,
-.info-body,
 .links-body,
 .mail-body,
 .home-body {
@@ -130,6 +129,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     gap: 0;
     padding: 1rem;
     color: #eee6d4;
@@ -203,18 +203,21 @@
     font-size: 0.7em;
 }
 
-.settings-body::-webkit-scrollbar, .info-body::-webkit-scrollbar {
+.settings-body::-webkit-scrollbar,
+.info-body::-webkit-scrollbar {
     width: 8px;
     filter: opacity(0.1);
 }
 
-.settings-body::-webkit-scrollbar-thumb, .info-body::-webkit-scrollbar-thumb {
+.settings-body::-webkit-scrollbar-thumb,
+.info-body::-webkit-scrollbar-thumb {
     background-color: #a38d78;
     filter: opacity(0.1);
     border-radius: 4px;
 }
 
-.settings-body::-webkit-scrollbar-track, .info-body::-webkit-scrollbar-track {
+.settings-body::-webkit-scrollbar-track,
+.info-body::-webkit-scrollbar-track {
     background-color: rgba(80, 64, 41, 0.2);
     filter: opacity(0.1);
 }
@@ -238,14 +241,157 @@
     color: #352b1f;
 }
 
-.info-content-body-link {
-    padding: 15px;
-    color: #dcd3bd;
+.info-container {
+    width: 60%;
+    height: 58%;
+    overflow: auto;
+    position: relative;
+    touch-action: manipulation;
+    overflow: hidden;
+    overscroll-behavior: none;
+    padding: 0;
+    font-family: "Press Start 2P", sans-serif;
+    color: #837360;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-body {
+    width: 99%;
+    height: 99%;
+    background-color: #443429;
+    margin-top: auto;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border: 4px solid #f1e4c6;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.info-content-body {
+    width: 46%;
+    margin-left: 3%;
+    margin-top: 2%;
+}
+
+.info-content-image-menu {
+    max-width: 400px;
+    max-height: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
+.info-content-image-child {
+    position: absolute;
+}
+
+.info-avatar {
+    position: absolute;
+    transform: scale(1.4);
+    z-index: 1000;
+    width: 100px;
+    top: 32%;
+    left: 37.5%;
+}
+
+.info-avatar:hover {
+    cursor: pointer;
+    transform: scale(1.6);
+}
+
+.info-content-image {
+    position: absolute;
+    max-width: 400px;
+    top: 53%;
+    left: 55%;
+    transform: translate(0%, -50%);
+}
+
+.info-content-body-column-section {
+  position: relative;       
+  display: inline-block;     
+  overflow: visible;         
+  background-color: #563C2E;
+  color: #e2dac8;
+  border: 2px solid #80735d;
+  border-radius: 3px;
+  padding: 12px 16px;
+  padding-top: 16px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 0.9em;
+  line-height: 1.6;
+  width: 95%;
+  margin-bottom: 7%;
+}
+
+.info-content-body-column-section::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -3px;                
+  left: 12px;
+  display: inline-block;
+  padding: 0 8px;
+  color: #eee6d4;
+  background-color: #563C2E; 
+  font-size: 0.8em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.info-value-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    align-items: center;
+}
+
+.info-value-box {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    background-color: #725237;
+    border-radius: 5px;
     text-align: center;
 }
 
+.info-value-box:hover {
+    transform: scale(1.2);
+}
+
+.popup-text {
+  visibility: hidden; 
+  opacity: 0; 
+  font-size: 0.7em;
+  position: absolute;
+  z-index: 1;
+  background-color: #563C2E; 
+  color: eee6d4;
+  padding: 3px 6px;
+  border-radius: 2px;
+  white-space: nowrap; 
+  top: 100%;
+  left: 110%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.info-value-box:hover .popup-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.info-value-box img {
+    width: 30px;
+    height: 30px;
+    background-color: #725237;
+}
+
 .mail-body {
-    padding-top: 0;
+    padding-top: 10px;
     text-align: center;
     align-content: center;
     overflow: hidden;
@@ -257,10 +403,10 @@
 .mail-links {
     margin-top: 15px;
     width: 100%;
-    display: flex;              
-    justify-content: center;   
-    gap: 20px;                
-    flex-wrap: wrap;         
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .mail-link {
@@ -338,7 +484,8 @@
     text-align: left;
 }
 
-.book-body-left, .book-body-right {
+.book-body-left,
+.book-body-right {
     padding-left: 2vw;
 }
 
@@ -361,14 +508,17 @@
     filter: opacity(0.1);
 }
 
-.book-arrow-left, .book-arrow-right, .book-page-index {
+.book-arrow-left,
+.book-arrow-right,
+.book-page-index {
     color: #eee6d4;
     position: absolute;
     bottom: 0.1vh;
     background-color: transparent;
 }
 
-.book-arrow-left:hover, .book-arrow-right:hover {
+.book-arrow-left:hover,
+.book-arrow-right:hover {
     border-color: transparent;
     color: #fff;
     transform: scale(1.1);
@@ -506,7 +656,7 @@
     color: #000000;
     font-family: "Press Start 2P", sans-serif;
     line-height: 1.5;
-    height: 100%;  
+    height: 100%;
     box-sizing: border-box;
     overflow-y: auto;
 }

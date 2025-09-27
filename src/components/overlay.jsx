@@ -1,5 +1,6 @@
 import '../css/overlay.css';
 import FigmaDemo from '../components/figmademo';
+import YearProgressBar from '../components/yearbar';
 import { useOverlay } from '../context/overlay';
 import { useAudio } from '../context/audio';
 import button from '../assets/buttons/pressed button.png';
@@ -10,6 +11,14 @@ import fifi_lowres from '../assets/overlays/fifi-lowres.png';
 import hangingframe_overlay from '../assets/overlays/hangingframe_overlay.png';
 import duoduo_highres from "../assets/overlays/duoduo_highres.jpg";
 import shelf_overlay from '../assets/overlays/shelf_overlay.png';
+import info_avatar from '../assets/overlays/info/info_avatar.png';
+import info_menu from '../assets/overlays/info/info_menu.png';
+import info_camera from '../assets/overlays/info/info_camera.svg';
+import info_capybara from '../assets/overlays/info/info_capybara.svg';
+import info_cat from '../assets/overlays/info/info_cat.svg';
+import info_magnifyglass from '../assets/overlays/info/info_magnifyglass.svg';
+import info_pretzel from '../assets/overlays/info/info_pretzel.svg';
+import info_snowman from '../assets/overlays/info/info_snowman.svg';
 
 import { useState, useEffect } from 'react';
 import Gallery from '../components/gallery';
@@ -206,7 +215,11 @@ function Overlay({ handleClick, onNavigate }) {
                         </div>
                         <div className="acknowledgements">
                             <h3>ACKNOWLEDGEMENTS</h3>
-                            <div className="acknowledgements-text">Assets are hand-drawn, AI-genreated, or photos pixelated. Web application made with React. The home page inspired by Unpacking.</div>
+                            <div className="acknowledgements-text">
+                                Assets are hand-drawn, AI-generated, or photos pixelated. Web application made with React. The home page inspired by Unpacking. Pixel icons from{' '}
+                                <a href="https://sqkhor.com/pixel-icons/#" target="_blank" style={{ whiteSpace: 'nowrap' }}>Sqkor.</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -224,10 +237,53 @@ function Overlay({ handleClick, onNavigate }) {
                         </button>
                     </div>
                     <div className="info-body">
-                        <div className="info-content">About Me</div>
+                        <div className="info-content">ALLISON HUANG</div>
                         <div className='info-content-body'>
-                            <div className="info-content-body-link">
-                                My name is Allison Huang and I'm studying Computer Science and Engineering at UC Irvine. I'm a sophomore looking for software engineerng opportunities where I can further my knowledge and expand my horizons! In my free time, I like to find tasty food spots around Orange County with my friends, hike nearby mountains and trails, and brainstorm project ideas.
+                            <div className="info-content-body-column info-content-body-left">
+                                <div className='info-content-body-column-section' data-label="Level 19">
+                                    <YearProgressBar />
+                                </div>
+
+                                <div className='info-content-body-column-section' data-label="University of California-Irvine">
+                                    Computer Science B.S.
+                                </div>
+
+                                <div className='info-content-body-column-section' data-label="Location">
+                                    Irvine / San Francisco, CA
+                                </div>
+
+                                <div className='info-content-body-column-section' data-label='Likes'>
+                                    <div className='info-value-container'>
+                                        <div className='info-value-box'>
+                                            <img src={info_cat} />
+                                            <span class="popup-text">cats and dogs</span>
+                                        </div>
+                                        <div className='info-value-box'>
+                                            <img src={info_capybara} />
+                                            <span class="popup-text">capybara</span>
+                                        </div>
+                                        <div className='info-value-box'>
+                                            <img src={info_camera} />
+                                            <span class="popup-text">taking pics</span>
+                                        </div>
+                                        <div className='info-value-box'>
+                                            <img src={info_pretzel} />
+                                            <span class="popup-text">yummy food</span>
+                                        </div>
+                                        <div className='info-value-box'>
+                                            <img src={info_snowman} />
+                                            <span class="popup-text">winter</span>
+                                        </div>
+                                        <div className='info-value-box'>
+                                            <img src={info_magnifyglass} />
+                                            <span class="popup-text">exploring</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='info-content-image'>
+                                <img className="info-avatar" src={info_avatar} />
+                                <img className='info-content-image-menu' src={info_menu} />
                             </div>
                         </div>
                     </div>
@@ -235,7 +291,7 @@ function Overlay({ handleClick, onNavigate }) {
             </div>
         );
     }
-    else if (overlay.title == 'links') {
+    /* else if (overlay.title == 'links') {
         return (
             <div className='overlay'>
                 <div className='links-container'>
@@ -259,7 +315,7 @@ function Overlay({ handleClick, onNavigate }) {
                 </div>
             </div>
         );
-    }
+    } */
     else if (overlay.title == 'mail') {
         return (
             <div className='overlay'>
@@ -573,18 +629,7 @@ function Overlay({ handleClick, onNavigate }) {
         );
     }
 
-    return (
-        <div className='overlay'>
-            <div className=''>
-                <div className="overlay-header">
-                    <h2>{overlay.title}</h2>
-                    <button onClick={onCloseButtonClick}>
-                        ×
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+    return;
 }
 
 export default Overlay;

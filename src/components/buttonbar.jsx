@@ -26,12 +26,12 @@ function ButtonBar({ handleClick }) {
             hoverText: 'About Me',
             onClick: () => openOverlay('info')
         },
-        {
+        /* {
             bg: unpressed_button,
             icon: link_icon,
             hoverText: 'My Resumes',
             onClick: () => openOverlay('links')
-        },
+        }, */
         {
             bg: unpressed_button,
             icon: mail_icon,

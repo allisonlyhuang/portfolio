@@ -44,7 +44,7 @@ function Home() {
         drapes: 'Toggle Drapes',
         pctable: 'Software, Libraries, + Packages',
         papers: 'My Projects',
-        awards: 'Langauges',
+        awards: 'Languages',
         pictureframe: '₍^. .^₎⟆',
         hangingframe: '૮⍝• ᴥ •⍝ა',
         stereo: 'Toggle Music',
