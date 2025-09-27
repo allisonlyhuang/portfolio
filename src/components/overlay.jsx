@@ -11,7 +11,7 @@ import hangingframe_overlay from '../assets/overlays/hangingframe_overlay.png';
 import duoduo_highres from "../assets/overlays/duoduo_highres.jpg";
 import shelf_overlay from '../assets/overlays/shelf_overlay.png';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Gallery from '../components/gallery';
 import arduino_icon from '../assets/overlays/languages/arduino_icon.png';
 import canva_icon from '../assets/overlays/languages/canva_icon.png';
@@ -63,6 +63,11 @@ function Overlay({ handleClick, onNavigate }) {
     };
 
     const [activeTab, setActiveTab] = useState(0);
+
+    useEffect(() => {
+        setActiveTab(0);
+    }, [currentProjectIndex]);
+
 
     const coding_languages = [
         { index: 1, icon: cpp_icon, title: "C++" },
@@ -147,9 +152,11 @@ function Overlay({ handleClick, onNavigate }) {
     ]
 
     const handleNext = (state, library, index) => {
+        setActiveTab(0);
         state(prev => (prev === library.length - index ? 0 : prev + index));
     };
     const handlePrevious = (state, library, index) => {
+        setActiveTab(0);
         state(prev => (prev === 0 ? library.length - index : prev - index));
     };
 
@@ -370,63 +377,63 @@ function Overlay({ handleClick, onNavigate }) {
                         <div className='desktop-description'>
                             <div class="grid-item">
                                 <img src={github_icon} alt="Image 1" />
-                                    <span>Github</span>
+                                <span>Github</span>
                             </div>
                             <div class="grid-item">
                                 <img src={figma_icon} alt="Image 2" />
-                                    <span>Figma</span>
+                                <span>Figma</span>
                             </div>
                             <div class="grid-item">
                                 <img src={vscode_icon} alt="Image 3" />
-                                    <span>Visual Studio Code</span>
+                                <span>Visual Studio Code</span>
                             </div>
                             <div class="grid-item">
                                 <img src={arduino_icon} alt="Image 3" />
-                                    <span>Arduino IDE</span>
+                                <span>Arduino IDE</span>
                             </div>
                             <div class="grid-item">
                                 <img src={solidworks_icon} alt="Image 3" />
-                                    <span>SolidWorks</span>
+                                <span>SolidWorks</span>
                             </div>
                             <div class="grid-item">
                                 <img src={canva_icon} alt="Image 3" />
-                                    <span>Canva</span>
+                                <span>Canva</span>
                             </div>
                             <div class="grid-item">
                                 <img src={google_icon} alt="Image 3" />
-                                    <span>Google Workspace</span>
+                                <span>Google Workspace</span>
                             </div>
                             <div class="grid-item">
                                 <img src={microsoft_icon} alt="Image 3" />
-                                    <span>Microsoft 365</span>
+                                <span>Microsoft 365</span>
                             </div>
                             <div class="grid-item">
                                 <img src={pycharm_icon} alt="Image 3" />
-                                    <span>PyCharm</span>
+                                <span>PyCharm</span>
                             </div>
                             <div class="grid-item">
                                 <img src={intellij_icon} alt="Image 3" />
-                                    <span>IntelliJ</span>
+                                <span>IntelliJ</span>
                             </div>
                             <div class="grid-item">
                                 <img src={django_icon} alt="Image 3" />
-                                    <span>Django</span>
+                                <span>Django</span>
                             </div>
                             <div class="grid-item">
                                 <img src={react_icon} alt="Image 3" />
-                                    <span>React</span>
+                                <span>React</span>
                             </div>
                             <div class="grid-item">
                                 <img src={bootstrap_icon} alt="Image 3" />
-                                    <span>Bootstrap</span>
+                                <span>Bootstrap</span>
                             </div>
                             <div class="grid-item">
                                 <img src={nodejs_icon} alt="Image 3" />
-                                    <span>Node.js</span>
+                                <span>Node.js</span>
                             </div>
                             <div class="grid-item">
                                 <img src={pygame_icon} alt="Image 3" />
-                                    <span>PyGame</span>
+                                <span>PyGame</span>
                             </div>
                         </div>
                     </div>
