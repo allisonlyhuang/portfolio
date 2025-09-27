@@ -300,6 +300,93 @@
     transform: scale(1.6);
 }
 
+.info-drink {
+    position: absolute;
+    width: 80px;
+    z-index: 1000;
+    top: 15.2%;
+    left: 9.4%;
+}
+
+.info-drink:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.info-airpods {
+    position: absolute;
+    width: 80px;
+    z-index: 1000;
+    top: 38%;
+    left: 9.4%;
+}
+
+.info-airpods:hover {
+    cursor: pointer;
+    transform: scale(1.25);
+}
+
+.info-menu-overlay {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    width: 86%;
+    height: 50%;
+    background-color: #714E35;
+    border: 2px dotted #f1e4c6;
+    border-radius: 10px;
+}
+
+.info-drink-overlay {
+    top: 20%;
+    left: -77%;
+}
+
+.info-airpods-overlay {
+    top: 44%;
+    left: -77%;
+}
+
+.info-menu-overlay-title {
+    display: flex;
+    flex-direction: row;
+    font-size: 0.8em;
+    color: #f1e4c6;
+    align-items: center;
+}
+
+.info-menu-overlay-icon {
+    width: 70px;
+    height: 70px;
+}
+
+.info-menu-overlay-body {
+    padding: 15px;
+    padding-top: 0;
+}
+
+.info-menu-overlay-desc {
+    font-size: 0.7em;
+    color: #f0eeea;
+}
+
+.info-menu-overlay-quirks {
+    padding-top: 5%;
+    font-size: 0.7em;
+    color: #f1e4c6;
+}
+
+.info-drink:hover + .info-drink-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-airpods:hover + .info-airpods-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
 .info-content-image {
     position: absolute;
     max-width: 400px;
@@ -309,43 +396,42 @@
 }
 
 .info-content-body-column-section {
-  position: relative;       
-  display: inline-block;     
-  overflow: visible;         
-  background-color: #563C2E;
-  color: #e2dac8;
-  border: 2px solid #80735d;
-  border-radius: 3px;
-  padding: 12px 16px;
-  padding-top: 16px;
-  font-family: "Press Start 2P", monospace;
-  font-size: 0.9em;
-  line-height: 1.6;
-  width: 95%;
-  margin-bottom: 7%;
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    background-color: #563C2E;
+    color: #e2dac8;
+    border: 2px solid #80735d;
+    border-radius: 3px;
+    padding: 12px 16px;
+    padding-top: 16px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    width: 95%;
+    margin-bottom: 7%;
 }
 
 .info-content-body-column-section::before {
-  content: attr(data-label);
-  position: absolute;
-  top: -3px;                
-  left: 12px;
-  display: inline-block;
-  padding: 0 8px;
-  color: #eee6d4;
-  background-color: #563C2E; 
-  font-size: 0.8em;
-  line-height: 1;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 999;
+    content: attr(data-label);
+    position: absolute;
+    top: -3px;
+    left: 12px;
+    display: inline-block;
+    padding: 0 8px;
+    color: #eee6d4;
+    background-color: #563C2E;
+    font-size: 0.8em;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
 }
 
 .info-value-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
     align-items: center;
 }
 
@@ -363,25 +449,25 @@
 }
 
 .popup-text {
-  visibility: hidden; 
-  opacity: 0; 
-  font-size: 0.7em;
-  position: absolute;
-  z-index: 1;
-  background-color: #563C2E; 
-  color: eee6d4;
-  padding: 3px 6px;
-  border-radius: 2px;
-  white-space: nowrap; 
-  top: 100%;
-  left: 110%;
-  transform: translateX(-50%);
-  transition: opacity 0.3s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 0.7em;
+    position: absolute;
+    z-index: 1;
+    background-color: #563C2E;
+    color: eee6d4;
+    padding: 3px 6px;
+    border-radius: 2px;
+    white-space: nowrap;
+    top: 100%;
+    left: 110%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
 }
 
 .info-value-box:hover .popup-text {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
 .info-value-box img {

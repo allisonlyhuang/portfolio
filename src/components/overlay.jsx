@@ -19,6 +19,8 @@ import info_cat from '../assets/overlays/info/info_cat.svg';
 import info_magnifyglass from '../assets/overlays/info/info_magnifyglass.svg';
 import info_pretzel from '../assets/overlays/info/info_pretzel.svg';
 import info_snowman from '../assets/overlays/info/info_snowman.svg';
+import info_drink from '../assets/overlays/info/info_drink.png';
+import info_airpods from '../assets/overlays/info/info_airpods.png';
 
 import { useState, useEffect } from 'react';
 import Gallery from '../components/gallery';
@@ -284,6 +286,36 @@ function Overlay({ handleClick, onNavigate }) {
                             <div className='info-content-image'>
                                 <img className="info-avatar" src={info_avatar} />
                                 <img className='info-content-image-menu' src={info_menu} />
+                                <img className='info-drink' src={info_drink}/>
+                                <div className='info-menu-overlay info-drink-overlay'>
+                                    <div className='info-menu-overlay-title'>
+                                        <img className='info-menu-overlay-icon' src={info_drink} />
+                                        <h3 style={{ marginLeft: "10px" }}>Rose Milk Tea</h3>
+                                    </div>
+                                    <div className='info-menu-overlay-body'>
+                                        <div className="info-menu-overlay-desc">
+                                            Premium-quality milk tea from Ume Tea's Rose Series, part of their Valentine's Day promotion
+                                        </div>
+                                        <div className="info-menu-overlay-quirks">
+                                            Quirks: Helps with digestion
+                                        </div>
+                                    </div>
+                                </div>
+                                <img className='info-airpods' src={info_airpods}/>
+                                <div className='info-menu-overlay info-airpods-overlay'>
+                                    <div className='info-menu-overlay-title'>
+                                        <img className='info-menu-overlay-icon' src={info_airpods} />
+                                        <h3 style={{ marginLeft: "10px" }}>AirPods Gen3</h3>
+                                    </div>
+                                    <div className='info-menu-overlay-body'>
+                                        <div className="info-menu-overlay-desc">
+                                            A must-have everyday carry, often playing Porter Robinson, LANY, or the 1975
+                                        </div>
+                                        <div className="info-menu-overlay-quirks">
+                                            Quirks: Boosts productivity / focus, and uplifts mood
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
