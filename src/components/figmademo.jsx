@@ -13,6 +13,7 @@ const FigmaDemo = ({ figmalink }) => {
                 src={figmalink}
                 allowFullScreen
                 title="Figma Present Demo"
+                loading="eager"
             />
         </div>
     );
