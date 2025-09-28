@@ -18,7 +18,8 @@ import info_pretzel from '../assets/overlays/info/info_pretzel.svg';
 import info_snowman from '../assets/overlays/info/info_snowman.svg';
 import info_drink from '../assets/overlays/info/info_drink.png';
 import info_airpods from '../assets/overlays/info/info_airpods.png';
-
+import info_necklace from '../assets/overlays/info/info_necklace.png';
+import info_qmark from '../assets/overlays/info/info_qmark.png';
 
 import arduino_icon from '../assets/overlays/languages/arduino_icon.png';
 import canva_icon from '../assets/overlays/languages/canva_icon.png';
@@ -113,6 +114,8 @@ const preloadImages = [
   info_menu,
   info_drink,
   info_airpods,
+  info_necklace,
+  info_qmark,
 
   // info svgs (can still preload as <img>)
   info_camera,

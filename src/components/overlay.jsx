@@ -21,6 +21,8 @@ import info_pretzel from '../assets/overlays/info/info_pretzel.svg';
 import info_snowman from '../assets/overlays/info/info_snowman.svg';
 import info_drink from '../assets/overlays/info/info_drink.png';
 import info_airpods from '../assets/overlays/info/info_airpods.png';
+import info_necklace from '../assets/overlays/info/info_necklace.png';
+import info_qmark from '../assets/overlays/info/info_qmark.png';
 
 import { useState, useEffect } from 'react';
 import Gallery from '../components/gallery';
@@ -239,7 +241,7 @@ function Overlay({ handleClick, onNavigate }) {
                         </button>
                     </div>
                     <div className="info-body">
-                        <div className="info-content">ALLISON HUANG</div>
+                        <div className="info-content">About Me</div>
                         <div className='info-content-body'>
                             <div className="info-content-body-column info-content-body-left">
                                 <div className='info-content-body-column-section' data-label="Level 19">
@@ -286,6 +288,7 @@ function Overlay({ handleClick, onNavigate }) {
                             <div className='info-content-image'>
                                 <img className="info-avatar" src={info_avatar} />
                                 <img className='info-content-image-menu' src={info_menu} />
+
                                 <img className='info-drink' src={info_drink}/>
                                 <div className='info-menu-overlay info-drink-overlay'>
                                     <div className='info-menu-overlay-title'>
@@ -313,6 +316,36 @@ function Overlay({ handleClick, onNavigate }) {
                                         </div>
                                         <div className="info-menu-overlay-quirks">
                                             Quirks: Boosts productivity / focus, and uplifts mood
+                                        </div>
+                                    </div>
+                                </div>
+                                <img className='info-necklace' src={info_necklace}/>
+                                <div className='info-menu-overlay info-necklace-overlay'>
+                                    <div className='info-menu-overlay-title'>
+                                        <img className='info-menu-overlay-icon saturn-icon' src={info_necklace} />
+                                        <h3 style={{ marginLeft: "10px" }}>Saturn Necklace</h3>
+                                    </div>
+                                    <div className='info-menu-overlay-body'>
+                                        <div className="info-menu-overlay-desc">
+                                            Vivienne Westwood necklace bought with very first paycheck in high school
+                                        </div>
+                                        <div className="info-menu-overlay-quirks">
+                                            Quirks: Looks good, keeps motivation levels up
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='info-qmark' />
+                                <div className='info-menu-overlay info-qmark-overlay'>
+                                    <div className='info-menu-overlay-title'>
+                                        <img className='info-menu-overlay-icon qmark-icon' src={info_qmark} />
+                                        <h3 style={{ marginLeft: "10px" }}>Empty Slot</h3>
+                                    </div>
+                                    <div className='info-menu-overlay-body'>
+                                        <div className="info-menu-overlay-desc">
+                                            Keeping one slot empty and my mind open for novel adventures and newer opportunities!
+                                        </div>
+                                        <div className="info-menu-overlay-quirks">
+                                            Quirks: keeps me open-minded, flexible, and curious
                                         </div>
                                     </div>
                                 </div>

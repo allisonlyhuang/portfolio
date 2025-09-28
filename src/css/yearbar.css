@@ -9,7 +9,7 @@
 
 .year-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #866346, #8C6A4E);
+  background: linear-gradient(90deg, #866346, #b09278);
   transition: width 0.5s ease-in-out;
 }
 
