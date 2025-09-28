@@ -1,0 +1,26 @@
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #0d0d0d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Press Start 2P", sans-serif;
+    z-index: 9999;
+}
+
+.loading-text {
+    font-size: 1.25rem;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
+    }
+}

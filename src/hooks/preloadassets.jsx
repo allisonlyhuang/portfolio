@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import button from '../assets/buttons/pressed button.png';
 import book_overlay from '../assets/overlays/book_overlay.png';
@@ -92,106 +92,136 @@ import person_icon from '../assets/home-page/person_icon.png';
 
 
 const preloadImages = [
-  // buttons
-  button,
-  unpressed_button,
-  home_icon,
-  info_icon,
-  link_icon,
-  mail_icon,
+    // buttons
+    button,
+    unpressed_button,
+    home_icon,
+    info_icon,
+    link_icon,
+    mail_icon,
 
-  // overlays
-  book_overlay,
-  desktop_overlay,
-  pictureframe_overlay,
-  fifi_lowres,
-  hangingframe_overlay,
-  duoduo_highres,
-  shelf_overlay,
+    // overlays
+    book_overlay,
+    desktop_overlay,
+    pictureframe_overlay,
+    fifi_lowres,
+    hangingframe_overlay,
+    duoduo_highres,
+    shelf_overlay,
 
-  // info overlays
-  info_avatar,
-  info_menu,
-  info_drink,
-  info_airpods,
-  info_necklace,
-  info_qmark,
+    // info overlays
+    info_avatar,
+    info_menu,
+    info_drink,
+    info_airpods,
+    info_necklace,
+    info_qmark,
 
-  // info svgs (can still preload as <img>)
-  info_camera,
-  info_capybara,
-  info_cat,
-  info_magnifyglass,
-  info_pretzel,
-  info_snowman,
+    // info svgs (can still preload as <img>)
+    info_camera,
+    info_capybara,
+    info_cat,
+    info_magnifyglass,
+    info_pretzel,
+    info_snowman,
 
-  // language icons
-  arduino_icon,
-  canva_icon,
-  cpp_icon,
-  css_icon,
-  figma_icon,
-  github_icon,
-  google_icon,
-  html_icon,
-  intellij_icon,
-  java_icon,
-  js_icon,
-  microsoft_icon,
-  pycharm_icon,
-  python_icon,
-  restapi_icon,
-  solidworks_icon,
-  sql_icon,
-  uiux_icon,
-  vscode_icon,
-  nodejs_icon,
-  bootstrap_icon,
-  django_icon,
-  react_icon,
-  pygame_icon,
+    // language icons
+    arduino_icon,
+    canva_icon,
+    cpp_icon,
+    css_icon,
+    figma_icon,
+    github_icon,
+    google_icon,
+    html_icon,
+    intellij_icon,
+    java_icon,
+    js_icon,
+    microsoft_icon,
+    pycharm_icon,
+    python_icon,
+    restapi_icon,
+    solidworks_icon,
+    sql_icon,
+    uiux_icon,
+    vscode_icon,
+    nodejs_icon,
+    bootstrap_icon,
+    django_icon,
+    react_icon,
+    pygame_icon,
 
-  // projects (only the images, skip mp4s)
-  fitness1,
-  fitness2,
-  fitness3,
-  fitness5,
+    // projects (only the images, skip mp4s)
+    fitness1,
+    fitness2,
+    fitness3,
+    fitness5,
 
-  // home-page room assets
-  empty_room,
-  closed_drapes,
-  open_drapes,
-  glass_window,
-  bed,
-  coffeetable_and_drawer,
-  shelf,
-  pctable,
-  plants,
-  papers,
-  awards,
-  picture_frame,
-  hanging_frame,
-  lights,
-  stereo,
-  music_off,
-  music_on,
-  duoduo_sit,
-  duoduo_bark,
+    // home-page room assets
+    empty_room,
+    closed_drapes,
+    open_drapes,
+    glass_window,
+    bed,
+    coffeetable_and_drawer,
+    shelf,
+    pctable,
+    plants,
+    papers,
+    awards,
+    picture_frame,
+    hanging_frame,
+    lights,
+    stereo,
+    music_off,
+    music_on,
+    duoduo_sit,
+    duoduo_bark,
 
-  // start page
-  doors_open,
-  doors_closed,
+    // start page
+    doors_open,
+    doors_closed,
 
-  // misc
-  person_icon,
+    // misc
+    person_icon,
 ];
 
 
 export function usePreloadAssets() {
-  useEffect(() => {
-    preloadImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        let isCancelled = false;
+
+        async function preload() {
+            try {
+                await Promise.all(
+                    preloadImages.map(
+                        (src) =>
+                            new Promise((resolve) => {
+                                const img = new Image();
+                                img.src = src;
+                                img.onload = resolve;
+                                img.onerror = resolve;
+                            })
+                    )
+                );
+
+                if (!isCancelled) {
+                    setIsLoaded(true);
+                }
+            } catch (err) {
+                console.error("Preload error:", err);
+                setIsLoaded(true);
+            }
+        }
+
+        preload();
+
+        return () => {
+            isCancelled = true;
+        };
+    }, []);
+
+    return isLoaded;
 }

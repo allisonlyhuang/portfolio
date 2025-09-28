@@ -10,15 +10,16 @@ import { useRef, useEffect, useState } from 'react';
 import button_click from './assets/buttons/Button 4 (1).mp3';
 import TransitionCircle from './components/transition';
 import { usePreloadAssets } from "./hooks/preloadassets";
+import LoadingScreen from "./components/loadingscreen";
 
 function App() {
-  usePreloadAssets();
+  const isLoaded = usePreloadAssets();
 
   return (
     <HoverProvider>
       <OverlayProvider>
         <AudioProvider>
-          <MainContent />
+          {!isLoaded ? <LoadingScreen /> : <MainContent />}
         </AudioProvider>
       </OverlayProvider>
     </HoverProvider>
