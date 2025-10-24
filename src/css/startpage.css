@@ -39,6 +39,19 @@
     calc(8px * var(--scale)) calc(8px * var(--scale)) calc(16px * var(--scale)) rgba(0, 0, 0, 0.3);
 }
 
+.overlay {
+  position: fixed;
+    inset: 0;
+    background: #0d0d0d;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Press Start 2P", sans-serif;
+    z-index: 9999;
+    font-size: 1.25rem;
+}
+
 .screen {
   cursor: pointer;
   width: calc(800px * var(--scale));
