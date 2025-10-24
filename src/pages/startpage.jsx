@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import doors_open from '../assets/start-page/start_page_open_door.png';
 import doors_closed from '../assets/start-page/start_page_closed_door.png';
 import '../css/startpage.css';
@@ -34,6 +34,28 @@ function Start({ onNavigate, handleClick }) {
             });
         }
     };
+
+    console.log(window.innerHeight);
+    console.log(window.innerWidth);
+
+
+    useEffect(() => {
+        const updateScale = () => {
+            const baseWidth = 1400;
+            const baseHeight = 550;
+            console.log(window.innerWidth);
+            console.log(window.innerHeight);
+            const scale = Math.min(window.innerWidth / baseWidth, window.innerHeight / baseHeight);
+            document.documentElement.style.setProperty('--scale', scale);
+        };
+
+        updateScale();
+        window.addEventListener('resize', updateScale);
+
+        return () => {
+            window.removeEventListener('resize', updateScale);
+        };
+    }, []);
 
     return (
         <div className="monitor-page">

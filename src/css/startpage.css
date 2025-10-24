@@ -1,9 +1,18 @@
+:root {
+  --scale: 1;
+  /* dynamically updated with JS */
+}
+
 .monitor-page {
-  min-height: 100vh;
+  min-height: calc(100vh * var(--scale) * 1.2);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
 }
 
 .monitor-wrapper {
@@ -20,77 +29,74 @@
 .monitor-bezel {
   position: relative;
   background: #faf4ed;
-  padding: 16px;
-  border-radius: 8px;
+  padding: calc(16px * var(--scale));
+  border-radius: calc(8px * var(--scale));
   image-rendering: pixelated;
   filter: contrast(1.2);
   box-shadow:
-    inset 4px 4px 0px #d0c8bf,
-    inset -4px -4px 0px #897968,
-    8px 8px 16px rgba(0, 0, 0, 0.3);
+    inset calc(4px * var(--scale)) calc(4px * var(--scale)) 0px #d0c8bf,
+    inset calc(-4px * var(--scale)) calc(-4px * var(--scale)) 0px #897968,
+    calc(8px * var(--scale)) calc(8px * var(--scale)) calc(16px * var(--scale)) rgba(0, 0, 0, 0.3);
 }
 
 .screen {
   cursor: pointer;
-  width: clamp(600px, min(80vw, 80vh * 1.5), 1800px);
-  height: clamp(400px, min(53.33vw, 80vh), 1200px);
+  width: calc(800px * var(--scale));
+  height: calc(500px * var(--scale));
   position: relative;
   overflow: hidden;
-  border: 2px solid #333333;
+  border: calc(2px * var(--scale)) solid #333333;
   image-rendering: pixelated;
 }
 
 .door-box {
   filter: opacity(0);
   position: absolute;
-  top: 57%;
-  left: 41%;
-  width: 6vw;
-  height: 18vh;
+  top: calc(57% * var(--scale));
+  left: calc(41% * var(--scale));
+  width: calc(90px * var(--scale));
+  height: calc(140px * var(--scale));
   z-index: 999;
-  max-width: 90px;
-  max-height: 140px;
-  min-height: 80px;
+  max-width: calc(90px * var(--scale));
+  max-height: calc(140px * var(--scale));
+  min-height: calc(80px * var(--scale));
 }
 
 .screen-text {
   position: absolute;
-  bottom: 5%;
+  bottom: calc(5% * var(--scale));
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
   font-family: "Press Start 2P", sans-serif;
-  font-size: clamp(8px, 0.75vw, 16px);
-  text-shadow: 1px 1px 2px #000;
+  font-size: calc(12px * var(--scale));
+  text-shadow: calc(1px * var(--scale)) calc(1px * var(--scale)) calc(2px * var(--scale)) #000;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 90%;
   z-index: 999;
   transition: transform 0.2s ease-in-out;
-  /* smooth animation */
 }
 
 .screen-text:hover {
   cursor: pointer;
-  transform: translateX(-50%) scale(1.1);
-  /* subtle zoom */
+  transform: translateX(-50%) scale(calc(1.1 * var(--scale)));
 }
 
 .screen-text::before {
   font-family: 'Press Start 2P';
-  font-size: clamp(8px, 0.75vw, 16px);
+  font-size: calc(12px * var(--scale));
   content: '>>';
-  margin-right: 10px;
+  margin-right: calc(10px * var(--scale));
   color: #ffffff;
-
 }
 
 .screen-text::after {
   font-family: 'Press Start 2P';
-  font-size: clamp(8px, 0.75vw, 16px);
+  font-size: calc(12px * var(--scale));
   content: '<<';
-  margin-left: 10px;
+  margin-left: calc(10px * var(--scale));
   color: #ffffff;
 }
 
@@ -105,13 +111,7 @@
   pointer-events: none;
   filter: saturate(0.7) contrast(0.8);
   z-index: 1;
-
-  /* no image highlight */
   user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-touch-callout: none;
 }
 
 .title_name {
@@ -119,15 +119,15 @@
   font-family: 'Press Start 2P';
   position: absolute;
   z-index: 1000000;
-  right: 3.5vw;
-  top: 4vh;
-  font-size: 2vw;
-  text-shadow: 1px 1px 2px #000;
+  right: calc(54px * var(--scale));
+  top: calc(32px * var(--scale));
+  font-size: calc(32px * var(--scale));
+  text-shadow: calc(1px * var(--scale)) calc(1px * var(--scale)) calc(2px * var(--scale)) #000;
 }
 
 .monitor-brand-container {
   text-align: center;
-  margin-top: 8px;
+  margin-top: calc(8px * var(--scale));
 }
 
 .stand-container {
@@ -136,35 +136,35 @@
 }
 
 .stand-neck {
-  margin-top: -18px;
+  margin-top: calc(-18px * var(--scale));
   background: #f2eae0;
-  width: clamp(20px, 2vw, 90px);
-  height: clamp(26px, 4vw, 120px);
+  width: calc(60px * var(--scale));
+  height: calc(80px * var(--scale));
   image-rendering: pixelated;
   box-shadow:
-    inset 2px 0 0 #d0c8bf,
-    inset -2px 0 0 #897968;
+    inset calc(2px * var(--scale)) 0 0 #d0c8bf,
+    inset calc(-2px * var(--scale)) 0 0 #897968;
 }
 
 .stand-base {
   background: #f2eae0;
-  width: clamp(133px, 13.33vw, 600px);
-  height: clamp(13px, 1.33vw, 60px);
+  width: calc(400px * var(--scale));
+  height: calc(20px * var(--scale));
   margin: 0 auto;
-  border-radius: 4px;
+  border-radius: calc(4px * var(--scale));
   image-rendering: pixelated;
   box-shadow:
-    inset 2px 2px 0 #d0c8bf,
-    inset -2px -2px 0 #897968,
-    0 4px 8px rgba(0, 0, 0, 0.2);
+    inset calc(2px * var(--scale)) calc(2px * var(--scale)) 0 #d0c8bf,
+    inset calc(-2px * var(--scale)) calc(-2px * var(--scale)) 0 #897968,
+    0 calc(4px * var(--scale)) calc(8px * var(--scale)) rgba(0, 0, 0, 0.2);
 }
 
 .test {
   position: absolute;
-  top: 64%;
-  left: 45%;
-  width: 5px;
-  height: 5px;
+  top: calc(64% * var(--scale));
+  left: calc(45% * var(--scale));
+  width: calc(5px * var(--scale));
+  height: calc(5px * var(--scale));
   background-color: none;
   z-index: 1000;
 }

@@ -260,27 +260,27 @@ function Overlay({ handleClick, onNavigate }) {
                                     <div className='info-value-container'>
                                         <div className='info-value-box'>
                                             <img src={info_cat} />
-                                            <span class="popup-text">cats and dogs</span>
+                                            <span className="popup-text">cats and dogs</span>
                                         </div>
                                         <div className='info-value-box'>
                                             <img src={info_capybara} />
-                                            <span class="popup-text">capybara</span>
+                                            <span className="popup-text">capybara</span>
                                         </div>
                                         <div className='info-value-box'>
                                             <img src={info_camera} />
-                                            <span class="popup-text">taking pics</span>
+                                            <span className="popup-text">taking pics</span>
                                         </div>
                                         <div className='info-value-box'>
                                             <img src={info_pretzel} />
-                                            <span class="popup-text">yummy food</span>
+                                            <span className="popup-text">yummy food</span>
                                         </div>
                                         <div className='info-value-box'>
                                             <img src={info_snowman} />
-                                            <span class="popup-text">winter</span>
+                                            <span className="popup-text">winter</span>
                                         </div>
                                         <div className='info-value-box'>
                                             <img src={info_magnifyglass} />
-                                            <span class="popup-text">exploring</span>
+                                            <span className="popup-text">exploring</span>
                                         </div>
                                     </div>
                                 </div>
@@ -496,63 +496,63 @@ function Overlay({ handleClick, onNavigate }) {
                             Software/Packages
                         </div>
                         <div className='desktop-description'>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={github_icon} alt="Image 1" />
                                 <span>Github</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={figma_icon} alt="Image 2" />
                                 <span>Figma</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={vscode_icon} alt="Image 3" />
                                 <span>Visual Studio Code</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={arduino_icon} alt="Image 3" />
                                 <span>Arduino IDE</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={solidworks_icon} alt="Image 3" />
                                 <span>SolidWorks</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={canva_icon} alt="Image 3" />
                                 <span>Canva</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={google_icon} alt="Image 3" />
                                 <span>Google Workspace</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={microsoft_icon} alt="Image 3" />
                                 <span>Microsoft 365</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={pycharm_icon} alt="Image 3" />
                                 <span>PyCharm</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={intellij_icon} alt="Image 3" />
                                 <span>IntelliJ</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={django_icon} alt="Image 3" />
                                 <span>Django</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={react_icon} alt="Image 3" />
                                 <span>React</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={bootstrap_icon} alt="Image 3" />
                                 <span>Bootstrap</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={nodejs_icon} alt="Image 3" />
                                 <span>Node.js</span>
                             </div>
-                            <div class="grid-item">
+                            <div className="grid-item">
                                 <img src={pygame_icon} alt="Image 3" />
                                 <span>PyGame</span>
                             </div>
