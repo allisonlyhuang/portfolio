@@ -150,7 +150,7 @@ function Overlay({ handleClick, onNavigate }) {
             index: 7, content: { type: 'demo', files: "https://embed.figma.com/proto/Prw4eJoF92Y8trvXSQOjss/Mannequin-Software?node-id=319-5&p=f&scaling=contain&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=319%3A5&embed-host=share" }, title: 'Mannequin', date: 'Aug 2022 - Aug 2023',
             description: `● Proposed a software that creates avatars using AR to help consumers with purchasing decisions when online shopping
                           ● Designed wireframes as an interactive prototype to use for live demonstration when pitching to investors and judges`,
-            caption: 'Figma Wireframes for Demostration/Presentation',
+            caption: 'Figma Wireframes for Demonstration/Presentation',
             skills: 'Entrepreneurship, Project Management, Market Research/Analysis, Wireframing/UX (Figma)',
             other: ['Read our business report.', 'https://drive.google.com/file/d/1mrbenL6RQ6fFbB7-JV_IOWbYu_iNOOrR/view?usp=sharing']
         },
@@ -345,7 +345,7 @@ function Overlay({ handleClick, onNavigate }) {
                                             Keeping one slot empty and my mind open for novel adventures and newer opportunities!
                                         </div>
                                         <div className="info-menu-overlay-quirks">
-                                            Quirks: keeps me open-minded, flexible, and curious
+                                            Quirks: Keeps me open-minded, flexible, and curious
                                         </div>
                                     </div>
                                 </div>
