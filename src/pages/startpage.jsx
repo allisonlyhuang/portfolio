@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import doors_open from '../assets/start-page/start_page_open_door.png';
 import doors_closed from '../assets/start-page/start_page_closed_door.png';
 import '../css/startpage.css';
@@ -7,7 +7,6 @@ function Start({ onNavigate, handleClick }) {
     const doorRef = useRef(null);
     const [doorsOpen, setDoorsOpen] = useState(false);
     const [dialogueIndex, setDialogueIndex] = useState(0);
-    const [showOverlay, setShowOverlay] = useState(true); // overlay state
 
     const dialogue = [
         "Enter the house to begin",
@@ -29,40 +28,14 @@ function Start({ onNavigate, handleClick }) {
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
 
-            onNavigate("/home", { x: centerX, y: centerY });
+            onNavigate("/home", {
+                x: centerX,
+                y: centerY
+            });
         }
     };
 
-    // Hide overlay after a delay (optional)
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowOverlay(false);
-        }, 3000);
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        const updateScale = () => {
-            const baseWidth = 1400;
-            const baseHeight = 550;
-            const scale = Math.min(window.innerWidth / baseWidth, window.innerHeight / baseHeight);
-            document.documentElement.style.setProperty('--scale', scale);
-        };
-
-        updateScale();
-        window.addEventListener('resize', updateScale);
-        return () => window.removeEventListener('resize', updateScale);
-    }, []);
-
     return (
-        <div>
-            {showOverlay && (
-                <div className="overlay">
-                    <div className="overlay-content">
-                        Website not supported on Mobile
-                    </div>
-                </div>
-            )}
         <div className="monitor-page">
             <div className="monitor-wrapper">
                 <div className="monitor-container">
@@ -74,7 +47,7 @@ function Start({ onNavigate, handleClick }) {
                                 alt="monitor background"
                             />
                             <div className="title_name">
-                                Allison's <br />
+                                Allison's <br></br>
                                 Portfolio
                             </div>
                             <button
@@ -97,7 +70,6 @@ function Start({ onNavigate, handleClick }) {
                     <div className="stand-base" />
                 </div>
             </div>
-        </div>
         </div>
     );
 }
